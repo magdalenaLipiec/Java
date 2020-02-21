@@ -1,0 +1,25 @@
+//MAGDALENA LIPIEC, 2019
+public class Search {
+    //wyszukuje konkretny element z tablicy
+    public static void szukaj(int wybor, int tab[]){
+        boolean przekieruj = true;
+
+        for(int x: tab){
+            if (x == wybor){
+                przekieruj = true;
+                break;
+            }
+            else przekieruj = false;
+        }
+        if(przekieruj)  System.out.println("Znaleziono szukaną frazę: " + wybor);
+        else System.out.println("Brak podajnej frazy! Sprobuj ponownie!");
+
+        }
+
+
+    public static void main(String args[]){
+
+        int tablica[] = { 6, 8, 3, 9, 1};
+        szukaj(100, tablica);
+    }
+}
