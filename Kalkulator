@@ -1,0 +1,45 @@
+//MAGDALENA LIPIEC, 2019
+//Prosty Kalkulator
+
+import java.util.Scanner;
+
+public class Kalkulator {
+
+    static void calc(){
+
+        float wynik;
+
+        System.out.println("Witaj! Podaj pierwszą liczbę");
+        Scanner s1 = new Scanner(System.in);
+        float a = s1.nextFloat();
+        System.out.println("Podaj znak operacji");
+        Scanner s = new Scanner(System.in);
+        String znak = s.nextLine();
+        System.out.println("Podaj drugą liczbę");
+        Scanner s2 = new Scanner(System.in);
+        float b = s2.nextFloat();
+
+        switch (znak){
+            case "+":
+                System.out.println(a+b);
+                break;
+            case "-":
+                System.out.println(a-b);
+                break;
+            case "*":
+                System.out.println(a*b);
+                break;
+            case "/":
+                System.out.println(a/b);
+                break;
+            default:
+                System.out.println("Operacja niewykonalna");
+                break;
+        }
+    }
+
+
+    public static void main(String args[]){
+        calc();
+    }
+}
