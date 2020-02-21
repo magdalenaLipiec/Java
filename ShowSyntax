@@ -1,0 +1,86 @@
+//Magdalena Lipiec, 2019
+//Aplikacja -- wyświetla informacje o składniach w języku Java 
+//-- Dokonaj wyboru, którą składnię chcesz zobaczyć
+
+public class Help {
+    void helpOn(char choice) {      //wyswietla informacje o skladni
+        switch (choice) {
+            case '1':
+                System.out.println("Instrukcja warunkowa if:");
+                System.out.println("if(warunek) instrukcja;");
+                System.out.println("else instrukcja");
+                break;
+            case '2':
+                System.out.println("Instrukcja wyboru switch:");
+                System.out.println("switch(wyrazenie)");
+                System.out.println("case stala: instrukacja");
+                System.out.println("break;");
+                System.out.println("...");
+                break;
+            case '3':
+                System.out.println("Pętla for:");
+                System.out.println("for(inicjalizacja; warunek; iteracja");
+                System.out.println("instrukcja");
+                break;
+            case '4':
+                System.out.println("Pętla while:");
+                System.out.println("while(warunek) instrukcja");
+                break;
+            case '5':
+                System.out.println("Pętla do-while:");
+                System.out.println("while {instrukcja}");
+                System.out.println("do(warunek);");
+                break;
+            case '6':
+                System.out.println("Instrukcja Break:");
+                System.out.println("break; lub break etykieta;");
+                break;
+            case '7':
+                System.out.println("Instrukcja continue:");
+                System.out.println("continue; lub continue etykieta;");
+                System.out.println("else instrukcja");
+                break;
+
+        }
+    }//end helpON
+
+    void showMenu() {    //menu systemu pomocy
+        System.out.println("Informacje na temat skladni instrukcji");
+        System.out.println("1. if");
+        System.out.println("2. switch");
+        System.out.println("3. for");
+        System.out.println("4. while");
+        System.out.println("5. do-while");
+        System.out.println("6. break");
+        System.out.println("7. continue\n");
+        System.out.println("Wyboerz numer instrukcji (lub q, aby zakonczyc)");
+    }//end showMenu
+
+    boolean isValid(int ch) {     //sprawdza poprawnosc wyboru
+        if (ch < '1' | ch > '7' & ch != 'q') return false;
+        else return true;
+    }//end isValid
+}
+
+
+import java.io.IOException;
+
+public class HelpClassDemo {
+
+
+    public static void main(String argd[])
+            throws IOException {
+
+        char choice, ignore;
+
+        Help h1 = new Help();
+
+        h1.showMenu();
+        choice = (char) System.in.read();
+
+        h1.helpOn(choice);
+
+        h1.isValid(choice);
+
+    }
+}
