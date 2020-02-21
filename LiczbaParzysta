@@ -1,0 +1,16 @@
+//MAGDALENA LIPIEC
+//SPRAWDZ CZY PODANA PRZEZ CIEBIE LICZBA JEST LICZBA PARZYSTA
+
+import java.util.Scanner;
+
+public class LiczbyParzyste {
+
+    public static void main(String args[]){
+
+        System.out.println("Podaj liczbę sprawdzę, czy jest parzysta");
+        Scanner s= new Scanner(System.in);
+        int liczba = s.nextInt();
+
+        if (liczba%2 == 0) System.out.println("Podana liczba jest liczbą parzzystą");
+        else System.out.println("Podana liczbą nie jest parzysta");
+    }
