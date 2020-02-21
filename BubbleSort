@@ -1,4 +1,9 @@
-ublic class BubbleSort {
+//MAGDALENA LIPIEC, 2019
+//algorytm bubblesort
+//minimalna wartość
+//maksymalna wartość
+
+Public class BubbleSort {
 
     static int max(int tab[]){
         int max = tab[0];
