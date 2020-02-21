@@ -1,0 +1,30 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class GraDuzoMalo {
+
+    public static void graj(){
+
+        int wybor;
+
+        System.out.println("LOSUJĘ LICZBĘ.");
+        Random r = new Random();
+        int liczba = r.nextInt(100);
+
+        Scanner s = new Scanner(System.in);
+
+        do{
+            System.out.println("Podaj liczbę!");
+            wybor = s.nextInt();
+
+            if (wybor < liczba) System.out.println("ZA MALO!");
+            else if (wybor == liczba) System.out.println("GRATULACJE! TRAFILES!");
+            else System.out.println("ZA DUZO!");
+
+        }while ((wybor != liczba));
+    }
+
+    public static void main(String args[]){
+        graj();
+    }
+}
