@@ -1,0 +1,36 @@
+//MGADALENA LIPIEC, 2020
+//Silnia -- liczenie silni z podanej liczby 
+//-- rekurencyjnie -- iteracyjnie
+
+public class SilniaRekurencyjnie {
+
+    //rekurenyjnie
+    int silnia(int n){
+
+        int wynik;
+
+        if(n == 1) return 1;
+        wynik = silnia(n-1)*n;
+        System.out.println(wynik);
+        return wynik;
+
+    }
+
+    //iteracyjnie
+    int silnia_iter(int n){
+
+        int wynik = 1;
+        for(int i = 1; i <= n; i++){
+            wynik = wynik * i;
+        }
+
+        return wynik;
+    }
+
+    public static void main(String args[]){
+    SilniaRekurencyjnie f = new SilniaRekurencyjnie();
+    f.silnia(1);
+        System.out.println(f.silnia(5));
+
+    }
+}
