@@ -1,0 +1,41 @@
+//MAGDALENA LIPIEC, 2018
+//Operacje matematyczne -- dodawanie, odejmowanie, mnozenie, dzielenie
+
+public class OperacjeMatematyczne {
+
+    public static void dodawanie(int a, int b)
+    {
+        int suma = a + b;
+        System.out.print("Suma: ");
+        System.out.println(suma);
+    }
+
+    public static void odejmowanie(int a, int b)
+    {
+        int suma = a - b;
+        System.out.print("Różnica: ");
+        System.out.println(suma);
+    }
+
+    public static void mnozenie(int a, int b)
+    {
+        int suma = a * b;
+        System.out.print("Iloczyn: ");
+        System.out.println(suma);
+    }
+
+    public static void dzielenie(int a, int b)
+    {
+        int suma = a / b;
+        System.out.print("Iloraz: ");
+        System.out.println(suma);
+    }
+
+    public static void main(String args[])
+    {
+        dodawanie(1,1);
+        odejmowanie(2,2);
+        mnozenie(3,3);
+        dzielenie(4,4);
+    }
+}
