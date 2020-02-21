@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+//MAGDALENA LIPIEC
+//Aplikacja dla podanej liczby całkowitej wyświetla jej dzielniki
+public class DzielnikiLiczby {
+
+
+    public static void main(String args[]){
+
+        System.out.println("Podaj liczbę, sprawdzę jej dzielniki.");
+        Scanner s = new Scanner(System.in);
+        int liczba = s.nextInt();
+
+        for (int i = 1; i<= liczba; i++){
+            if(liczba%i == 0){
+                System.out.println("Liczba jest podzielna przez: " + i);
+            }
+        }
+
+    }
+}
