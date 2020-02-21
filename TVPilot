@@ -1,0 +1,114 @@
+import java.util.Scanner;
+
+/** PILOT DO TV
+ * by Magdalena Lipiec, 2019
+ * Pilot do TV
+ * regulacja głośności (1-15)
+ * przycisk zmiany kanału - góra/dół
+ * zapętlone kanały, głośność niezapętlona
+ * zakończenie pracy prgramu po wyłączeniu
+ * */
+ 
+ public class Pilot {
+
+    //WYSWIETLENIE WSZYSTKICH GUZIKOW
+    public static void allButtons()
+    {
+        int buttons[] = new int[10];
+
+        System.out.println("Dostępne przysiki:");
+        for(int i=1; i<10; i++) {
+            buttons[i] = i;
+            System.out.print("   ");
+            System.out.print(buttons[i]);
+        } //end for
+    }
+    
+    public static void changeChannel()
+    {
+        int enabled;
+        int channel = 1;
+        int volume = 7; //0-15
+        int wybor = 8;
+
+        while(wybor != 9) {
+            
+            System.out.println();
+            System.out.println("Proszę wybrać przycisk");
+            Scanner s = new Scanner(System.in);
+            wybor = s.nextInt();
+
+            switch (wybor) {
+                case 1: {
+                    channel = 1;
+                    System.out.println("Wybrano kanał 1");
+                }
+                break;
+                case 2: {
+                    channel = 2;
+                    System.out.println("Wybrano kanał 2");
+                }
+                break;
+                case 3: {
+                    channel = 3;
+                    System.out.println("Wybrano kanał 3");
+                }
+                break;
+                //KANAL +
+                case 4: {
+                    channel++;
+                    if (channel > 3) {
+                        channel = 1;
+                    }
+                    System.out.println("CHANNEL +");
+                    System.out.println(channel);
+                }
+                break;
+                //KANAL -
+                case 5: {
+                    channel--;
+                    if (channel < 1) {
+                        channel = 4;
+                    }
+                    System.out.println("CHANNEL -");
+                    System.out.println(channel);
+
+                    System.out.println("CHANNEL -");
+                }
+                break;
+                //GLOSNOSC +
+                case 6: {
+                    if(volume==15) volume = volume;
+                    else volume++;
+                    System.out.println("VOLUME +");
+                    System.out.println(volume);
+                }
+                break;
+                //GLOSNOSC -
+                case 7: {
+                    if(volume==0) volume = volume;
+                    else volume--;
+                    System.out.println("VOLUME -");
+                    System.out.println(volume);
+                }
+                break;
+                case 8: {
+                    wybor = 8;
+                    System.out.println("TV ON");
+                }
+                    break;
+                case 9: {
+                    wybor = 9;
+                    System.out.println("TV OFF");
+                }
+                    break;
+            }
+        }//end while
+    } //end method
+    
+    public static void main(String args[])
+    {
+        allButtons();
+        changeChannel();
+    }
+}
