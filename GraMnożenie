@@ -1,0 +1,62 @@
+//MAGDALENA LIPIEC, 2018
+//Gra - Tabliczka mnożenia 
+//-- Podaj w ile rund chcesz zagrać
+import java.util.Random;
+import java.util.Scanner;
+
+public class GraMnozenie {
+
+    public static void tabliczka()
+    {
+        int a, b;
+        int runda;  //ilosc rund
+        int wynik;
+        int iteracja = 0;
+        int punkty = 0;
+
+        System.out.print("Witaj! Ile rund chcesz zagrać?");
+        Scanner s = new Scanner(System.in);
+        runda = s.nextInt();
+
+        for (int i = 1; i <=runda; i++)
+        {
+            Random r1 = new Random();
+            Random r2 = new Random();
+
+            a = r1.nextInt(10);
+            b = r1.nextInt(10);
+
+            System.out.println(a + " * " + b);
+            Scanner s1 = new Scanner(System.in);
+            wynik = s1.nextInt();
+
+
+            iteracja++;
+
+            if(wynik == (a*b))
+            {
+                System.out.println("Poprawna odpowiedź");
+                punkty++;
+                System.out.println("Twój wynik to: " + punkty + "!");
+            }
+            else
+            {
+                System.out.println("Błędna odpowiedź");
+                System.out.println("Twój wynik to: " + punkty + "!");
+                System.out.println("Poprawna odpowiedź to: " + a * b);
+            }
+
+            if( (iteracja%2 == 0) && (punkty%2 == 0) && (punkty != 0) )
+            System.out.println("BRAWO!");
+        }
+
+    }
+
+
+
+    public static  void main(String argd[])
+    {
+        tabliczka();
+    }
+
+}
