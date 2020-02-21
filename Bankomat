@@ -1,0 +1,62 @@
+mport java.util.Scanner;
+//---------------------------------------------------------------------------------------------------------------------
+// MAGDALENA LIPIEC, 2019
+// BANKOMAT
+//Po włączeniu programu wyświetla się komunikat włóż kartę.
+//Trzy dowolne litery oznaczają daną kartę - abc - zdefiniowane w kodzie
+//Po wpisaniuich wyświetla się trybu wyboru,
+//z opcjami: wypłać pieniądze i stan konta.
+//Użytkownik nie może wypłacić więcej niż ma.
+//Użytkownik może wypłacić pieniądze kilkukrotnie, dopóki nma pieniądze na koncie
+//---------------------------------------------------------------------------------------------------------------------
+public class Bankomat {
+    public static void bankomat()
+    {
+
+        String karta = "abc";
+        String podanaKarta;
+        int wybror;
+        int stanKonta = 2000;
+        int wyplata;
+
+        System.out.println("PROSZĘ WŁOŻYĆ KARTĘ");
+        Scanner s1 = new Scanner(System.in);
+        podanaKarta = s1.next();
+
+
+        if(karta.equals(podanaKarta))
+        {
+            System.out.println("Proszę wybrać operację");
+            System.out.println("1. Wypłać pieniądze");
+            System.out.println("2. Stan konta");
+
+            Scanner s2 = new Scanner(System.in);
+            wybror = s2.nextInt();
+
+            if(wybror == 1)
+            {
+                Scanner s3 = new Scanner(System.in);
+                System.out.print("Podaj kwotę jaką chcesz  wypłacić");
+                wyplata = s2.nextInt();
+
+                int aktualna = stanKonta - wyplata;
+                System.out.println("Wypłacono pieniądze!");
+                System.out.println("Aktualny stan twojeogo konta to: " + aktualna);
+
+            }
+            else if (wybror == 2)
+            {
+                System.out.print("Stan Twojego konta to: ");
+                System.out.println(stanKonta);
+            }
+            else System.out.println("Brak opcji! Spróbuj ponownie.");
+        }
+        else System.out.println("Podałeś złą kartę! Spróbuj ponownie");
+    }
+
+    public static void main(String args[])
+    {
+        bankomat();
+    }
+
+}
