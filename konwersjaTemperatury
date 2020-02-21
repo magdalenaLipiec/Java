@@ -1,0 +1,17 @@
+//Konwersja stopni Celsjusza na Fahrenheita
+//MAGDALENA LIPIEC, 2019
+
+public class Temperatura {
+
+    static void convTemp(float temp){
+        System.out.println("Podana temperatura: " + temp + " w stopniach Celsjusza");
+        float tempF = (float) (1.8 * temp + 32.0);
+        System.out.println("Temperatura po konwersji: " + tempF);
+
+    }
+
+    public static void main(String args[]){
+
+        convTemp(28);
+    }
+}
