@@ -1,0 +1,26 @@
+                                                  //MAGDALENA LIPIEC, 2018
+                                                          //SILNIA
+                                         //Silnia -- obliczanie silni z danej liczby
+import java.util.Scanner;
+public class Silnia {
+
+    public static void silnia()
+    {
+        int wynik;
+
+        System.out.println("Podaj liczbę");
+        Scanner s= new Scanner(System.in);
+        int liczba = s.nextInt();
+        int silnia = 1;
+
+        for(int i = 1; i <= liczba; i++)    silnia *= i;
+
+        System.out.println(silnia);
+
+    }
+
+    public static void main(String args[])
+    {
+        silnia();
+    }
+}
