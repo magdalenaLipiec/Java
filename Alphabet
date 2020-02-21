@@ -1,0 +1,63 @@
+//MAGDALENA LIPIEC, 2019
+// Wyświetlenie alfabetu różnymi sposobami 
+//-- zamiana małych liter na duże i odwrotnie 
+//-- odwrócenie kolejności tablicy
+
+public class Alphabet {
+
+    public static void printAlphabetWHILE(char tab[]) {
+
+        char ch = 'a';
+
+        while (ch <= 'z') {
+
+            for (int i = 0; i < 26; i++) {
+                tab[i] = ch;
+                ch++;
+                System.out.println(tab[i]);
+            }
+        }
+
+    }
+
+    public static void alphabetASCI(){
+        char[] tab = new char[26];
+        char ch = 'a';
+
+
+            for (char i = 97; i < 122; i++) {
+
+                System.out.println(i);
+            }
+
+    }
+
+    public static void reverse(char tab[]){
+        System.out.println("**************************");
+
+        for(int i = 25; i >= 0; i-- ){
+            System.out.println(tab[i]);
+        }
+    }
+
+    public static void printAlphabet(char tab[]){
+        char ch;
+
+        for (int i = 0; i < 26; i++){
+            ch = (char) ('a' + i - 32); //-32 zmiana na duze litery
+            tab[i] = ch;
+            System.out.println(tab[i]);
+        }
+        //zamiana na duże litery z operatorem bitowym str 148 Java.przewodnik dla początkujących
+        //kasuje 6sty bit
+        //ch = (char) ((int) ch & 65503);
+
+    }
+
+    public static void main(String args[]){
+
+        char[] tab = new char[26];
+
+        printAlphabet(tab);
+    }
+}
