@@ -1,0 +1,20 @@
+//MAGDALENA LIPIEC, 2019
+//Program obliczający BMI -- Body Mass Index
+
+import java.security.PublicKey;
+
+public class BMI {
+
+    static void calc(float waga, float wzrost){
+        float bmi = (waga/wzrost*wzrost);
+
+        System.out.println("Twoje BMI wynosi: " + bmi);
+        if(bmi < 18.5) System.out.println("NIEDOWAGA!");
+        else if(bmi > 24.9) System.out.println("NADWAGA!");
+        else System.out.println("WAGA PRAWIDŁOWA");
+    }
+
+    public static void main(String args[]){
+
+    }
+}
