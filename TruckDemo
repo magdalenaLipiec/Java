@@ -1,0 +1,61 @@
+//Magdalena Lipiec, 2020c
+//Baza danych samochodów
+
+
+public class Vehicle {
+
+    private int passengers;
+    private int fuelcap;
+    private double lkm; //zyzycie paliwa w litrach na 100km
+
+    Vehicle(int p, int f, double l){
+        passengers = p;
+        fuelcap = f;
+        lkm = l;
+    }
+
+    //Zwraca zasieg
+    int range(){
+        return (int) (fuelcap/lkm * 100);
+    }
+
+    //Oblicza paliwo potrzebe do przejechania km kilmetrow
+    double fuelneeded(int km){
+        return (double) km/100*lkm;
+    }
+
+    //Metody dostępowe do składowych
+    int getPassengers(){return passengers;}
+    int getFuelcap(){return fuelcap;}
+    double getLkm(){return lkm;}
+    void setPassengers(int p){passengers = p;}
+    void setFuelcap(int f){fuelcap = f;}
+    void  setLkm(double l){ lkm = l;}
+}
+
+
+public class Truck extends Vehicle {
+
+    private int cargocap;   //ładowność w tonach
+
+    Truck(int p, int f, double l, int c) {
+        super(p, f, l);
+        cargocap = c;
+    }
+
+    //Metody dostępowe do cargocap
+    int getCargo(){return  cargocap;}
+    void setCargo(){}
+}
+
+
+
+public class TruckDemo {
+
+    public static void main(String args[]){
+
+        Truck t = new Truck(10,10,10,10);
+        System.out.println(t.getPassengers());
+
+    }
+}
