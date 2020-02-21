@@ -1,0 +1,24 @@
+//MAGDALENA LIPIEC,2019
+public class DivideTab {
+
+    public static void main(String args[]) {
+
+        int num[] = {1, 2, 3, 4, 5, 6};
+        int den[] = {1, 0, 3, 0, 5};
+
+        for (int i = 0; i < num.length; i++){
+            try{
+                System.out.println(num[i]/den[i]);
+            }
+            catch(ArithmeticException exc){
+                System.out.println("DZIELENIE PRZEZ ZERO");
+            }
+            catch (IndexOutOfBoundsException exc){
+                System.out.println("Brak odpowiedniego elementu tabliycy");
+                exc.printStackTrace();
+            }
+
+        }
+        System.out.println("MAGDYSIA");
+    }
+}
