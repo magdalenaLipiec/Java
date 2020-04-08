@@ -1,0 +1,53 @@
+//Tworzenie trzech wątków w programie za pomocą implementacji interfejsu Runnable
+//Magdalena Lipiec
+
+public class MyThread implements Runnable {
+    Thread thrd;
+
+    //tworzy nowy watek
+    MyThread(String name){
+        thrd = new Thread(this, name);
+    }
+
+    //metoda wytworcza ktora uruchamia watek
+    public static MyThread UtworziUruchom(String name){
+        //tworzy nowa instancje klasy MyThread o nazwie myThrd
+        MyThread myThrd = new MyThread(name);
+        //pozniej wywoluuje start() składowej thrd dostępnej w instancji myThrd
+        myThrd.thrd.start();    //uruchamia watek
+        //zwraca referencję nowej instancji MyThread
+        return myThrd;
+    }
+
+    //rozpoczyna wykonywanie nowego watku
+    public void run(){
+        System.out.println(thrd.getName() + "Rozpoczyna działanie!");
+
+        try{
+            for (int i = 0; i < 10; i++){
+                Thread.sleep(400);
+                System.out.println(thrd.getName() + "jest wykonywany. Wartosc licznika: " + i);
+            }
+        }
+        catch (InterruptedException exc){
+            System.out.println(thrd.getName() + "ZOSTAŁ PRZERWANY");
+        }
+        System.out.println(thrd.getName() + " Kończy działanie.");
+    }
+}
+
+public class UseThreads {
+
+    public static void main(String args[]){
+
+        System.out.println("Główny wątek rozpoczyna działanie.");
+
+        //twozenie watku nr 1
+        MyThread mt1 = MyThread.UtworziUruchom("WĄTEK 1");
+        //utworzenie watku nr 2
+        MyThread mt2 = MyThread.UtworziUruchom("WĄTEK 2");
+        //utworzenie watku nr 3
+        MyThread mt3 = MyThread.UtworziUruchom("WĄTEK 3");
+    }
+
+}
