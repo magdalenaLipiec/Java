@@ -1,0 +1,17 @@
+
+//Magdalena Lipiec, 2019
+public class AbsoluteValue {
+
+    public static void abs(float value){
+        float abs;
+        System.out.println("Podana wartość wynosi: " + value);
+
+        if (value >= 0)  abs = value;
+        else abs = -value;
+
+        System.out.println("ABS: " + abs);
+    }
+
+    public static void main(String args[]){
+        abs(-3);
+    
