@@ -48,6 +48,18 @@ public class UseThreads {
         MyThread mt2 = MyThread.UtworziUruchom("WĄTEK 2");
         //utworzenie watku nr 3
         MyThread mt3 = MyThread.UtworziUruchom("WĄTEK 3");
-    }
+        
+        do{
+            System.out.println(".");
+            try{
+                Thread.sleep(100);
+            }
+            catch (InterruptedException exc){
+                System.out.println("WĄTEK GLOWNY ZOSTAL PRZERWANY");
+            }
+        } while (mt1.thrd.isAlive() || mt2.thrd.isAlive() || mt3.thrd.isAlive());
 
+        System.out.println("Wątek główny kończy działanie");
+    }
+    
 }
