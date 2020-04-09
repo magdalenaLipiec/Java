@@ -1,0 +1,50 @@
+//Prosty przykład obrazujący typy sparametryzowane
+//Magdalena Lipiec
+//T jest parametrem oznaczającym tyo i zostanie zastąpiony rzeczywistym
+//typem podczas tworzenia obiektu typu Gen
+
+public class Gen<T> {
+
+    T ob;    //deklarujemy obiekt typu T
+
+    //konstruktor otrzymuje referencję obiektu typu T
+    Gen(T o){
+        ob = o;
+    }
+
+    //zwaraca ob
+    T getOb(){
+        return ob;
+    }
+
+    //wyświetla typ t
+    void showType(){
+        System.out.println("Typem T jest" + ob.getClass().getName());
+    }
+}
+
+
+public class GenDemo {
+
+    public static void main(String args[]){
+
+        //tworzymy referencję typu Gen, którego parametrem jest typ Integer
+        Gen<Integer> iOb;
+
+        //tworzymy obiekt Gen<I> i przypisuje jego referencję zmiennej iOb
+        iOb = new Gen<Integer>(88); //automatyczne opakowanie
+
+        //wyswietla typ danych używanych przez iOb
+        iOb.showType();
+
+        int v = iOb.getOb();
+        System.out.println("Wartość v: " + v);
+
+        //parametr typu Sting
+        Gen<String> strOb;
+        strOb = new Gen<String>("Magda");
+        strOb.showType();
+        String s = strOb.getOb();
+        System.out.println("Wartość s: " + s);
+    }
+}
