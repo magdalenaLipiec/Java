@@ -1,0 +1,43 @@
+//Magdalena Lipiec
+
+public class TwoGen<T,V> {
+
+    T ob1;
+    V ob2;
+
+    TwoGen(T o1, V o2){
+        ob1 = o1;
+        ob2 = o2;
+    }
+
+    void showTypes(){
+        System.out.println("Typem T jest: "+ ob1.getClass().getName());
+        System.out.println("Typem V jest: " + ob2.getClass().getName());
+    }
+
+    T getOb1(){
+        return ob1;
+    }
+
+    V getOb2(){
+        return ob2;
+    }
+}
+
+
+public class TwoGenDemo {
+
+    public static void  main(String args[]){
+
+        TwoGen<Integer, String> tg = new TwoGen<Integer, String>(88,"Magda");
+
+        int x = tg.getOb1();
+        System.out.println(x);
+
+        String s = tg.getOb2();
+        System.out.println(s);
+
+        tg.getOb2();
+        tg.showTypes();
+    }
+}
